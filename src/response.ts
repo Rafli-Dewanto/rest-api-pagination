@@ -1,14 +1,24 @@
 import { Response } from 'express';
 
-const response = (code: number, status: String, res: Response, data: any, page: number, total: number, totalPages: number, perPage: number): void => {
-    res.status(code).json({
-        page,
-        per_page: perPage,
-        total,
-        total_pages: totalPages,
-        code,
-        status,
-        data,
+interface Data {
+    code: number,
+    status: string,
+    data: any,
+    page: number,
+    total: number,
+    totalPages: number,
+    perPage: number
+}
+
+const response = (res: Response, data: Data): void => {
+    res.status(data.code).json({
+        page: data.page,
+        per_page: data.perPage,
+        total: data.total,
+        total_pages: data.totalPages,
+        code: data.code,
+        status: data.status,
+        data: data.data,
     })
 }
 

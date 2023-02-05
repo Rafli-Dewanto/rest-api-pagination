@@ -18,12 +18,28 @@ class Post {
                     take: perPage,
                     skip: (page - 1) * perPage,
                 })
-                response(200, "OK", res, post, page, totalRows, totalPages, perPage)
+                response(res, {
+                    code: 200,
+                    status: "OK",
+                    data: post,
+                    page,
+                    total: totalRows,
+                    totalPages,
+                    perPage
+                })
             } else {
                 const post = await prisma.post.findMany({
                     take: perPage
                 })
-                response(200, "OK", res, post, 1, totalRows, totalPages, perPage)
+                response(res, {
+                    code: 200,
+                    status: "OK",
+                    data: post,
+                    page: 1,
+                    total: totalRows,
+                    totalPages,
+                    perPage
+                })
             }
             
         } catch (error) {
