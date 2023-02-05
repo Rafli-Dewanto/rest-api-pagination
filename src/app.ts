@@ -6,7 +6,7 @@ import postRoute from './routes/post.route'
 const app: Application = express();
 
 app.use(express.json())
-app.use('/api/post', postRoute)
+app.use('/api/posts', postRoute)
 app.use(notFound)
 app.use(errorHandler)
 app.listen(3000 || process.env.PORT, () => console.log(`listening on http://localhost:3000`));
