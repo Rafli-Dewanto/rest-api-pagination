@@ -1,8 +1,8 @@
 {
-  "name": "latihan-pagination",
+  "name": "rest-api-pagination",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "start": "node ./dist/app.js",
     "build": "npx tsc",
