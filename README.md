@@ -1,2 +1,2 @@
 # rest-api-pagination
-RESTful API pagination using typescript, prisma, and express
+Paginated RESTAPI using typescript, express, and prisma
